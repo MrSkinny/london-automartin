@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>London AutoMartin</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>London AutoMartin</h1>
 
+  <!-- Setup screen -->
   <div id="setup">
     <label for="difficulty">Select difficulty (1–3): </label>
     <select id="difficulty">
       <option value="1">1 (Easy)</option>
-      <option value="2" selected>2 (Medium)</option>
-      <option value="3">3 (Hard)</option>
+      <option value="2">2 (Medium)</option>
+      <option value="3" selected>3 (Hard)</option>
     </select>
     <button onclick="startGame()">Start Game</button>
   </div>
 
+  <!-- Game screen -->
   <div id="game" style="display:none;">
-    <div id="status-container">
-      <p id="status"></p>
-    </div>
+    <!-- Status text (cards remaining) -->
+    <p id="status">Cards remaining: 0</p>
+
+    <!-- Card and draw button container -->
     <div id="card-container">
       <div id="card" class="card"></div>
-      <button onclick="drawCard()">Draw Next Card</button>
+      <button id="draw-btn" onclick="drawCard()">Draw Next Card</button>
     </div>
   </div>
 

@@ -2,7 +2,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   color: #333;
@@ -14,13 +13,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   padding: 0 10px;
 }
 
 /* Header */
 h1 {
-  font-size: 1.6em;
+  font-size: 2em;
   margin: 10px 0;
   text-align: center;
 }
@@ -33,9 +31,10 @@ h1 {
   margin-top: 20px;
 }
 
-#setup select, #setup button {
-  font-size: 1.2em;
-  padding: 10px;
+#setup select,
+#setup button {
+  font-size: 1.3em;
+  padding: 12px;
   margin: 5px 0;
   width: 100%;
   box-sizing: border-box;
@@ -48,25 +47,21 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 120px); /* adjust for header/setup */
 }
 
-/* Status text */
-#status-container {
-  flex-shrink: 0;
-}
-
+/* Status text (cards remaining) */
 #status {
-  font-size: 1em;
+  font-size: 1.3em;       /* larger for mobile */
   margin-bottom: 10px;
+  text-align: center;      /* centered above card */
+  line-height: 1.4em;
 }
 
 /* Card + button container */
 #card-container {
   display: flex;
   flex-direction: column;
-  flex: 1;               /* take remaining vertical space */
-  justify-content: space-between; /* card top, button bottom */
+  gap: 10px;
 }
 
 /* Card styling */
@@ -78,13 +73,11 @@ h1 {
   width: 100%;
   box-sizing: border-box;
   text-align: left;
-  font-size: 1.15em;
+  font-size: 1.3em;       /* larger for readability */
   word-wrap: break-word;
   overflow-wrap: break-word;
-  flex: 1;               /* fill vertical space above button */
-  margin-bottom: 10px;
-  min-height: 150px;
-  overflow-y: auto;      /* scroll if text is long */
+  min-height: 100px;
+  max-height: none;
 }
 
 /* Crucial cards highlighted */
@@ -93,38 +86,35 @@ h1 {
   font-weight: bold;
 }
 
-/* Button styling */
-#card-container button {
+/* Draw button */
+#draw-btn {
   width: 100%;
   padding: 14px;
-  font-size: 1.2em;
+  font-size: 1.3em;
   border-radius: 8px;
   border: none;
   background: #333;
   color: #fff;
   cursor: pointer;
-  flex-shrink: 0;
 }
 
-#card-container button:hover {
+#draw-btn:hover {
   background: #555;
 }
 
 /* Mobile adjustments */
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.4em;
+    font-size: 1.8em;
   }
   .card {
-    font-size: 1.15em;
+    font-size: 1.25em;
     padding: 12px;
   }
-  #setup select, #setup button {
-    font-size: 1.1em;
+  #setup select,
+  #setup button,
+  #draw-btn {
+    font-size: 1.2em;
     padding: 10px;
-  }
-  #card-container button {
-    font-size: 1.1em;
-    padding: 12px;
   }
 }
