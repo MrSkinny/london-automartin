@@ -1,0 +1,130 @@
+/* Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 10px;
+}
+
+/* Header */
+h1 {
+  font-size: 1.6em;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Setup screen */
+#setup {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#setup select, #setup button {
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Game section */
+#game {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px); /* adjust for header/setup */
+}
+
+/* Status text */
+#status-container {
+  flex-shrink: 0;
+}
+
+#status {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+/* Card + button container */
+#card-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;               /* take remaining vertical space */
+  justify-content: space-between; /* card top, button bottom */
+}
+
+/* Card styling */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 1.15em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex: 1;               /* fill vertical space above button */
+  margin-bottom: 10px;
+  min-height: 150px;
+  overflow-y: auto;      /* scroll if text is long */
+}
+
+/* Crucial cards highlighted */
+.crucial {
+  color: #b00;
+  font-weight: bold;
+}
+
+/* Button styling */
+#card-container button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+#card-container button:hover {
+  background: #555;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4em;
+  }
+  .card {
+    font-size: 1.15em;
+    padding: 12px;
+  }
+  #setup select, #setup button {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+  #card-container button {
+    font-size: 1.1em;
+    padding: 12px;
+  }
+}
