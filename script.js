@@ -60,16 +60,16 @@ class Card {
 
   toHTML() {
     const resources = this.poverty
-      ? `Poverty ${this.poverty}`
-      : `Money £${this.money}`;
+      ? `${this.poverty} PP`
+      : `£${this.money}`;
 
     const actionText = this.action || "(none)";
 
     let filterText = "";
     if (this.draw_filter[0] === CRUCIAL_CARDS) {
       const normalFilters = this.draw_filter.slice(1);
-      const crucialPart = '<span class="crucial">Crucial Cards: ' + CRUCIAL_VALUES.join(", ") + '</span>';
-      const normalPart = normalFilters.length ? "; " + normalFilters.join(", ") : "";
+      const crucialPart = '<span class="crucial">Crucial Card + </span>';
+      const normalPart = normalFilters.join(", ");
       filterText = crucialPart + normalPart;
     } else {
       filterText = this.draw_filter.join(", ");
